@@ -41,7 +41,7 @@ jobs:
 
     - name: Build
       run: npm run build 
-    
+      
     - name: Deploy
       run: |
         git config --global user.name nhannguyen
