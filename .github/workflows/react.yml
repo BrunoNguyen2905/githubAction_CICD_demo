@@ -13,7 +13,7 @@ jobs:
   build:
 #can use ghaction on github server itself, dont have to use ur own virtual private server
 #self-hosted cause we hosting this on our own server
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
