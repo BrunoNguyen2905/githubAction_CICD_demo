@@ -30,18 +30,23 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Get npm cache directory
-      id: npm-cache
-      run: |
-        echo "::set-output name=dir::$(npm config get cache)"
+    - name: Get yarn cache directory
+        id: yarn-cache-dir
+        run: |
+          echo "::set-output name=dir::$(yarn cache dir)"
     - uses: actions/cache@v1
-      with:
-        path: ${{ steps.npm-cache.outputs.dir }}
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-    - name: Install dependencies
-      run: npm i
+        with:
+          path: ${{ steps.yarn-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+    - name: install node modules
+        run: |
+          yarn install --frozen-lockfile
+    - name: Lint
+        run: yarn lint
+        env:
+          CI: true
 
     - name: Run the tests and generate coverage report
       run: npm test -- --coverage
