@@ -5,9 +5,9 @@ name: React CI/CD
 # when push to ur repo on this specific branch, the whole workflows will get triggered
 on:
   push:
-    branches: [ main ]
+    branches: [ main, test ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, test ]
 #jobs you want to execute
 jobs:
   build:
