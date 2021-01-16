@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.1.10",
     "eslint": "^7.18.0",
     "gh-pages": "^3.1.0",
+    "lint": "^0.7.0",
     "netlify": "^6.0.12",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

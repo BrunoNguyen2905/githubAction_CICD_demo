@@ -53,7 +53,7 @@ jobs:
       run: npm run build 
     
     - name: Lint
-        run: yarn lint
+        run: npm run lint
 
     - name: Deploy
       run: |
