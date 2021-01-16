@@ -52,8 +52,6 @@ jobs:
     - name: Build
       run: npm run build 
     
-    - name: Lint
-        run: yarn lint
 
     - name: Deploy
       run: |
